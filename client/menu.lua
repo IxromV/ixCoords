@@ -32,7 +32,8 @@ local function openMenuCoords()
                     RageUI.Button("vector3("..ixCoords.mainColor.."x~s~, "..ixCoords.mainColor.."y~s~, "..ixCoords.mainColor.."z~s~)", nil, {}, true, {
                         onSelected = function()
                             SendNUIMessage({
-                                coords = "vector3("..coords.x..", "..coords.y..", "..coords.z..")"
+                                type = 'clipboard',
+                                data = "vector3("..coords.x..", "..coords.y..", "..coords.z..")"
                             })
                             ESX.ShowAdvancedNotification('Coordonnées', "~g~Succès", "Coordonées copiées !\rContenu de la copie : ~b~vector3("..math.floor(coords.x)..", "..math.floor(coords.y)..", "..math.floor(coords.z)..")~s~", ixCoords.CHAR, 0)
                         end
@@ -42,7 +43,8 @@ local function openMenuCoords()
                     RageUI.Button("{x = "..ixCoords.mainColor.."x~s~, y = "..ixCoords.mainColor.."y~s~, z = "..ixCoords.mainColor.."z~s~}", nil, {}, true, {
                         onSelected = function()
                             SendNUIMessage({
-                                coords = "{x = "..coords.x..", y = "..coords.y..", z = "..coords.z.."}"
+                                type = 'clipboard',
+                                data = "{x = "..coords.x..", y = "..coords.y..", z = "..coords.z.."}"
                             })
                             ESX.ShowAdvancedNotification('Coordonnées', "~g~Succès", "Coordonées copiées !\rContenu de la copie : ~b~{x = "..math.floor(coords.x)..", y = "..math.floor(coords.y)..", z = "..math.floor(coords.z).."}", ixCoords.CHAR, 0)
                         end
@@ -51,7 +53,8 @@ local function openMenuCoords()
                     RageUI.Button(""..ixCoords.mainColor.."x~s~, "..ixCoords.mainColor.."y~s~, "..ixCoords.mainColor.."z~s~", nil, {}, true, {
                         onSelected = function()
                             SendNUIMessage({
-                                coords = ""..coords.x..","..coords.y..","..coords.z..""
+                                type = 'clipboard',
+                                data = ""..coords.x..","..coords.y..","..coords.z..""
                             })
                             ESX.ShowAdvancedNotification('Coordonnées', "~g~Succès", "Coordonées copiées !\rContenu de la copie : ~b~"..math.floor(coords.x)..", "..math.floor(coords.y)..", "..math.floor(coords.z), ixCoords.CHAR, 0)
                         end
@@ -61,7 +64,8 @@ local function openMenuCoords()
                         onSelected = function()
                             local headingPed = GetEntityHeading(PlayerPedId())
                             SendNUIMessage({
-                                coords = headingPed
+                                type = 'clipboard',
+                                data = headingPed
                             })
                             ESX.ShowAdvancedNotification('Coordonnées', "~g~Succès", "Angle copié !\rContenu de la copie : ~b~"..math.floor(headingPed), ixCoords.CHAR, 0)
                             
